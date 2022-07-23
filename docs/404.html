@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.51">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
+    </script>
+    <title>Next</title><meta name="description" content="Документация по Next">
+    <link rel="modulepreload" href="/go-next-docs/assets/app.f2fd8a86.js"><link rel="modulepreload" href="/go-next-docs/assets/404.html.fe983d0a.js"><link rel="modulepreload" href="/go-next-docs/assets/404.html.78ccac28.js"><link rel="prefetch" href="/go-next-docs/assets/index.html.057ee13e.js"><link rel="prefetch" href="/go-next-docs/assets/index.html.5e6084f1.js"><link rel="prefetch" href="/go-next-docs/assets/cases.html.3ab27f0a.js"><link rel="prefetch" href="/go-next-docs/assets/index.html.346b8d62.js"><link rel="prefetch" href="/go-next-docs/assets/index.html.f8662b87.js"><link rel="prefetch" href="/go-next-docs/assets/index.html.5e424fdb.js"><link rel="prefetch" href="/go-next-docs/assets/cases.html.a4aa0282.js"><link rel="prefetch" href="/go-next-docs/assets/index.html.07ddf7df.js">
+    <link rel="stylesheet" href="/go-next-docs/assets/style.5ef91324.css">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><main class="page"><div class="theme-default-content"><h1>404</h1><blockquote>Looks like we&#39;ve got some broken links.</blockquote><a href="/go-next-docs/" class="">Take me home</a></div></main></div><!----><!--]--></div>
+    <script type="module" src="/go-next-docs/assets/app.f2fd8a86.js" defer></script>
+  </body>
+</html>
