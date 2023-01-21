@@ -60,11 +60,10 @@ module.exports = {
     },
 
     theme: defaultTheme({
-        home: '/',
+        home: '/ru/',
         search: true,
 
         locales: {
-            '/': ruThemeConfig,
             '/ru/': ruThemeConfig,
             '/en/': enThemeConfig,
         },
