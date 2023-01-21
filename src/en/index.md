@@ -1,0 +1,43 @@
+---
+lang: ru
+home: true
+
+heroText: Next
+tagline: Go microframework
+
+actions:
+- text: Getting Started
+  link: /en/guide/
+  type: primary
+- text: Examples
+  link: /en/guide/cases.md
+  type: secondary
+
+features:
+- title: 🐝 Http
+  details: Runs on top of the widely used fasthttp server using its HTTP layer
+- title: ✨ Fasthttp
+  details: Can be used as a fasthttp handler, embedding into existing applications on fasthttp
+- title: 🍿 Simple
+  details: Minimalism and simplicity are the key features of the micro-framework
+- title: 🛠 Flexibility
+  details: Микрофреймвор не навязывает архитектуру, гибкость остается на стороне разработчика
+- title: 📦 Composition
+  details: Micro applications can be combined into composition at a higher level
+- title: ☝ Router
+  details: Fast and flexible routing out of the box
+- title: 🤖 API
+  details: Ideal for developing REST APIs
+- title: 🚀 Fast
+  details: Zero overhead
+- title: 🎉 GoLang 1.20 Ready
+  details: Use new feature of golang
+
+footer: © 2022-2023 Next
+---
+
+
+**Next** is high performance and simple microframework.
+
+
+[//]: # (/{{ $frontmatter.lang }}/guide/)

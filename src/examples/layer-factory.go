@@ -1,4 +1,4 @@
-package examples
+package main
 
 import (
 	"log"
@@ -7,7 +7,7 @@ import (
 
 	"gopkg.in/yaml.v3"
 
-	"github.com/alexpts/go-next/next"
+	"github.com/alexpts/go-next/next/layer"
 )
 
 type RouterConfig struct {
@@ -16,18 +16,18 @@ type RouterConfig struct {
 	Controller   string
 	Name         string
 	Priority     int
-	Handler      next.Handler
-	Restrictions next.Restrictions
+	Handler      layer.Handler
+	Restrictions layer.Restrictions
 }
 
-var HandlerMap = map[string]next.Handler{
+var HandlerMap = map[string]layer.Handler{
 	"otherwise": MainPageAppHandler2,
 	"mainPage":  MainPageAppHandler2,
 	"mainPage2": MainPageAppHandler2,
 	"hello":     MainPageAppHandler2,
 }
 
-func CreateLayers(projectDir string) []*next.Layer {
+func CreateLayers(projectDir string) []*layer.Layer {
 	rawData, err := os.ReadFile(projectDir + "/config/router.yml")
 
 	var routes map[string]RouterConfig
@@ -39,8 +39,8 @@ func CreateLayers(projectDir string) []*next.Layer {
 	return factoryLayers(routes)
 }
 
-func factoryLayers(routes map[string]RouterConfig) []*next.Layer {
-	var layers []*next.Layer
+func factoryLayers(routes map[string]RouterConfig) []*layer.Layer {
+	var layers []*layer.Layer
 	var methods []string
 
 	for name, route := range routes {
@@ -53,8 +53,8 @@ func factoryLayers(routes map[string]RouterConfig) []*next.Layer {
 			methods = strings.Split(route.Methods, `|`) // GET|POST|PUT
 		}
 
-		layer := next.Layer{
-			Handlers:     []next.Handler{handler},
+		l := layer.Layer{
+			Handlers:     []layer.Handler{handler},
 			Priority:     route.Priority,
 			Name:         route.Name,
 			Path:         route.Path,
@@ -62,12 +62,12 @@ func factoryLayers(routes map[string]RouterConfig) []*next.Layer {
 			Methods:      methods,
 		}
 
-		layers = append(layers, &layer)
+		layers = append(layers, &l)
 	}
 
 	return layers
 }
 
-func MainPageAppHandler2(ctx *next.HandlerCxt) {
+func MainPageAppHandler2(ctx *layer.HandlerCtx) {
 	ctx.Response.AppendBodyString(`MainPageAppHandler2`)
 }

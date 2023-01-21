@@ -4,16 +4,20 @@ import (
 	"github.com/valyala/fasthttp"
 
 	"github.com/alexpts/go-next/next"
+	"github.com/alexpts/go-next/next/layer"
 )
 
+type Layer = layer.Layer
+type HandlerCtx = layer.HandlerCtx
+
 func main() {
-	app := next.NewApp()
-	app.Use(next.Config{}, func(ctx *next.HandlerCxt) {
+	app := next.ProvideMicroApp(nil, nil)
+	app.Use(Layer{}, func(ctx *HandlerCtx) {
 		ctx.Response.AppendBodyString(`Hello`)
 	})
 
 	server := &fasthttp.Server{
-		Handler: app.FasthttpHandler,
+		Handler: app.FastHttpHandler,
 	}
 
 	_ = server.ListenAndServe(":3000")

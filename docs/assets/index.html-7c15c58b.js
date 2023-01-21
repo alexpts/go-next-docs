@@ -1,0 +1,1 @@
+import{_ as t,p as n,q as o,R as e,t as r}from"./framework-96b046e1.js";const s={},c=e("p",null,[e("strong",null,"Next"),r(" is high performance and simple microframework.")],-1),a=[c];function _(l,i){return n(),o("div",null,a)}const m=t(s,[["render",_],["__file","index.html.vue"]]);export{m as default};

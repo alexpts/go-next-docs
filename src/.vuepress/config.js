@@ -44,7 +44,7 @@ module.exports = {
 
     base: '/go-next-docs/',
     title: 'Next',
-    lang: 'ru',
+    //lang: 'ru-RU',
     description: 'Документация по Next',
 
     locales: {
@@ -60,7 +60,6 @@ module.exports = {
     },
 
     theme: defaultTheme({
-        home: '/',
         search: true,
 
         locales: {
@@ -75,6 +74,4 @@ module.exports = {
         docsBranch: 'master',
         docsDir: 'src',
     }),
-
-
 }
